@@ -56,7 +56,7 @@ const song = async (m, Matrix) => {
           await Matrix.sendMessage(m.from, audioMessage, { quoted: m });
         }
 
-        await m.React("®");
+        await m.React("🎶");
       };
 
       if (isUrl) {
