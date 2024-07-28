@@ -43,6 +43,13 @@ _________________________________________
             display_text: "owner",
             id: `.owner`
           })
+        },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "subcribe",
+            id: `.rush1`
+          })
          }
         ];
 
