@@ -20,10 +20,9 @@ const prefixMatch = m.body.match(/^[\\/!#.]/);
 
     reportedMessages[messageId] = true;
 
-    const textt = `*| REQUEST/BUG |*`;
-    const teks1 = `\n\n*User*: @${m.sender.split("@")[0]}\n*Request/Bug*: ${text}`;
-    const teks2 = `\n\n*Hi ${m.pushName}, your request has been forwarded to my Owners.*\n*Please wait...*`;
-
+    const textt = `*| Rush/chat |*`;
+    const teks1 = `\n\n*User*: @${m.sender.split("@")[0]}\n*Rush/chat*: ${text}`;
+    const teks2 = `\n\n*Hi ${m.pushName}, your request has been forwarded to my Owners.*\n*Please wait..
     // Send the message to the first owner in the `owner` array
     gss.sendMessage(devlopernumber + "@s.whatsapp.net", {
         text: textt + teks1,
@@ -33,7 +32,7 @@ const prefixMatch = m.body.match(/^[\\/!#.]/);
     });
 
     // Send a reply to the user
-    m.reply("OBAGE ගැටලුව අපට ලැබුනා අප පරික්ශාකරාවි ඇතැම් විට");
+    m.reply("OBA company command බාවිතා කලෙ company සහය සදහා හො user සහය සදහා හො OBAGE ගැටලුව අපට ලැබුනා අප පරික්ශාකරාවි ඇතැම් විට");
    }
 };
 
