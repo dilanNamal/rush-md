@@ -36,7 +36,36 @@ _________________________________________
             display_text: "PING",
             id: `.ping`
           })
-        }
+                },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "Subcribe",
+            id: `.rush1`
+          })
+         }, 
+          {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "company☺️support",
+            id: `.owner`
+          })
+         },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "company☺️support2",
+            id: `.request rush`
+          })
+                  },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "BOT🎶USERSUPPORT",
+            id: `.request hi rush`
+          })
+
+
         ];
 
   const msg = generateWAMessageFromContent(m.from, {
@@ -84,3 +113,4 @@ _________________________________________
 };
 
 export default alive;
+
