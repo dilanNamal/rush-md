@@ -1,8 +1,6 @@
-<br>
-    <a href='https://dashboard.scalingo.com' target="_blank"><img alt='youtube video' src='https://img.shields.io/badge/-Videoyoutube-witgh?style=for-the-badge&logo=youtubefree&logoColor=red'/></a>
+<p align="center">
+credit by rush
+</p>
 
-## 
-
-<br>
-    <a href='https://heroku.com/deploy' target="_red"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-witgh?style=for-the-badge&logo=deployfree&logoColor=pink'/></a>
-
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=DAA520&center=true&width=910&height=100&lines=THANKS FOR CHOOSING +Rush-bot;MULTI+DEVICE+WHATSAPP+BOT" alt="Typing SVG" /></a>
+  </p>
