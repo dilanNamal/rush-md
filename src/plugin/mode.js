@@ -10,7 +10,7 @@ const modeCommand = async (m, Matrix) => {
     const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
     const text = m.body.slice(prefix.length + cmd.length).trim().toLowerCase();
 
-    if (cmd === 'mode') {
+    if (cmd === 'setting') {
         if (!isCreator) {
             await Matrix.sendMessage(m.from, { text: "*📛 owner ගේ command එකකි*" }, { quoted: m });
             return;
@@ -32,4 +32,4 @@ const modeCommand = async (m, Matrix) => {
     }
 };
 
-export default modeCommand;
+export default settingCommand;
