@@ -51,11 +51,11 @@ const playcommand = async (m, Matrix) => {
 
       const currentResult = searchResultsMap.get(searchIndex);
       const buttons = [
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎶 RUSHONE", id: `media_audio_${searchIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎧 AUDIO", id: `media_audio_${searchIndex}` }) },
         { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎥 VIDEO", id: `media_video_${searchIndex}` }) },
         { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎵 AUDIO DOCUMENT", id: `media_audiodoc_${searchIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎶 RUSHTWO", id: `media_videodoc_${searchIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🐥 NEXT", id: `next_${searchIndex + 1}` }) }
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🐥 RUSH", id: `media_videodoc_${searchIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🔍 NEXT", id: `next_${searchIndex + 1}` }) }
       ];
 
       const thumbnailUrl = currentResult.thumbnail;
@@ -106,11 +106,11 @@ const playcommand = async (m, Matrix) => {
         return m.reply('No more results.');
       }
       const buttons = [
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎶 Rushone", id: `media_audio_${nextIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎧 Rushone", id: `media_audio_${nextIndex}` }) },
         { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎥 VIDEO", id: `media_video_${nextIndex}` }) },
         { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎵 AUDIO DOCUMENT", id: `media_audiodoc_${nextIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎶 RUSHTWO", id: `media_videodoc_${nextIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "RUSH NEXT", id: `next_${nextIndex + 1}` }) }
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎦 RUSHTWO", id: `media_videodoc_${nextIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "⏩ NEXT", id: `next_${nextIndex + 1}` }) }
       ];
 
       const thumbnailUrl = currentResult.thumbnail;
