@@ -6,7 +6,7 @@ const { generateWAMessageFromContent, proto, prepareWAMessageMedia } = pkg;
 const searchResultsMap = new Map();
 let searchIndex = 1;
 
-const playcommand = async (m, Matrix) => {
+const songcommand = async (m, Matrix) => {
   let selectedListId;
   const selectedButtonId = m?.message?.templateButtonReplyMessage?.selectedId;
   const interactiveResponseMessage = m?.message?.interactiveResponseMessage;
@@ -25,7 +25,7 @@ const playcommand = async (m, Matrix) => {
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
   const text = m.body.slice(prefix.length + cmd.length).trim();
 
-  const validCommands = ['play'];
+  const validCommands = ['song'];
 
   if (validCommands.includes(cmd)) {
     if (!text) {
@@ -51,11 +51,11 @@ const playcommand = async (m, Matrix) => {
 
       const currentResult = searchResultsMap.get(searchIndex);
       const buttons = [
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎧 AUDIO", id: `media_audio_${searchIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎥 VIDEO", id: `media_video_${searchIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎵 AUDIO DOCUMENT", id: `media_audiodoc_${searchIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎦 VIDEO DOCUMENT", id: `media_videodoc_${searchIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "⏩ NEXT", id: `next_${searchIndex + 1}` }) }
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🎶 RUSH SEVER1", id: `media_audio_${searchIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🎶RUSH SEVER2", id: `media_video_${searchIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🎵 AUDIO DOCUMENT", id: `media_videodoc_${searchIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🔍NOT AVAILABLE ", id: `media_audiodoc_${searchIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🐥 ඊලඟ ", id: `next_${searchIndex + 1}` }) }
       ];
 
       const thumbnailUrl = currentResult.thumbnail;
@@ -67,13 +67,13 @@ const playcommand = async (m, Matrix) => {
             messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `*ETHIX-MD YOUTUBE SEARCH*\n\n> *TITLE:* ${currentResult.title}\n> *AUTHOR:* ${currentResult.author.name}\n> *VIEWS:* ${currentResult.views}\n> *DURATION:* ${currentResult.timestamp}\n> *YTLINK:* ${url}\n`
+                text: `*RUSH-MD YOUTUBE SEARCH*\n\n> *TITLE:* ${currentResult.title}\n> *AUTHOR:* ${currentResult.author.name}\n> *VIEWS:* ${currentResult.views}\n> *DURATION:* ${currentResult.timestamp}\n> *YTLINK:* ${url}\n`
               }),
-              footer: proto.Message.InteractiveMessage.Footer.create({ text: "© Powered By 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿" }),
+              footer: proto.Message.InteractiveMessage.Footer.create({ text: "© Powered By YOU-CAN-VIEW-NEW-BOT-ASHU-ACADEMY-YOUTUBE-CHANEL" }),
               header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image: { url: thumbnailUrl } }, { upload: Matrix.waUploadToServer })),
                 title: "",
-                gifPlayback: true,
+                gifsongback: true,
                 subtitle: "",
                 hasMediaAttachment: false 
               }),
@@ -106,11 +106,11 @@ const playcommand = async (m, Matrix) => {
         return m.reply('No more results.');
       }
       const buttons = [
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎧 AUDIO", id: `media_audio_${nextIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎥 VIDEO", id: `media_video_${nextIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎵 AUDIO DOCUMENT", id: `media_audiodoc_${nextIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "🎦 VIDEO DOCUMENT", id: `media_videodoc_${nextIndex}` }) },
-        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ display_text: "⏩ NEXT", id: `next_${nextIndex + 1}` }) }
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🎶 RUSH SEVER1", id: `media_audio_${nextIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🎶RUSH SEVER2", id: `media_videodoc_${nextIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🎵 AUDIO DOCUMENT", id: `media_audiodoc_${nextIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🔍NOT AVAILABLE ", id: `media_videodoc_${nextIndex}` }) },
+        { "name": "quick_reply", "buttonParamsJson": JSON.stringify({ dissong_text: "🐥 ඊලඟ ", id: `next_${nextIndex + 1}` }) }
       ];
 
       const thumbnailUrl = currentResult.thumbnail;
@@ -122,13 +122,13 @@ const playcommand = async (m, Matrix) => {
             messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `*ETHIX-MD YOUTUBE SEARCH*\n\n> *🔍TITLE:* ${currentResult.title}\n> *AUTHOR:* ${currentResult.author.name}\n> *VIEWS:* ${currentResult.views}\n> *DURATION:* ${currentResult.timestamp}\n> *YTLINK:* ${url}`
+                text: `*RUSH-MD YOUTUBE SEARCH*\n\n> *🔍TITLE:* ${currentResult.title}\n> *AUTHOR:* ${currentResult.author.name}\n> *VIEWS:* ${currentResult.views}\n> *DURATION:* ${currentResult.timestamp}\n> *YTLINK:* ${url}`
               }),
-              footer: proto.Message.InteractiveMessage.Footer.create({ text: "© Powered By 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿" }),
+              footer: proto.Message.InteractiveMessage.Footer.create({ text: "© Powered By YOU-CAN-VIEW-NEW-BOT-ASHU-ACADEMY-YOUTUBE-CHANEL" }),
               header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image: { url: thumbnailUrl } }, { upload: Matrix.waUploadToServer })),
                 title: "",
-                gifPlayback: true,
+                gifsongback: true,
                 subtitle: "",
                 hasMediaAttachment: false 
               }),
@@ -173,7 +173,7 @@ const playcommand = async (m, Matrix) => {
                   mentionedJid: [m.sender],
                   externalAdReply: {
                     title: "↺ |◁   II   ▷|   ♡",
-                    body: `Now playing: ${selectedMedia.title}`,
+                    body: `Now songing: ${selectedMedia.title}`,
                     thumbnailUrl: selectedMedia.thumbnail,
                     sourceUrl: selectedMedia.url,
                     mediaType: 1,
@@ -186,7 +186,7 @@ const playcommand = async (m, Matrix) => {
               content = {
                 video: buffer,
                 mimetype: 'video/mp4',
-                caption: `> TITLE: ${selectedMedia.title}\n\n*Downloaded by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿*`
+                caption: `> TITLE: ${selectedMedia.title}\n\n*Downloaded by YOU-CAN-VIEW-NEW-BOT-ASHU-ACADEMY-YOUTUBE-CHANEL*`
               };
               await Matrix.sendMessage(m.from, content, { quoted: m });
             } else if (type === 'audiodoc' || type === 'videodoc') {
@@ -194,12 +194,12 @@ const playcommand = async (m, Matrix) => {
                 document: buffer,
                 mimetype: type === 'audiodoc' ? 'audio/mpeg' : 'video/mp4',
                 fileName: `${selectedMedia.title}.${type === 'audiodoc' ? 'mp3' : 'mp4'}`,
-                caption: `*Downloaded by 𝞢𝙏𝞖𝞘𝞦-𝞛𝘿*`,
+                caption: `*Downloaded by YOU-CAN-VIEW-NEW-BOT-ASHU-ACADEMY-YOUTUBE-CHANEL*`,
                 contextInfo: {
                   externalAdReply: {
                     showAdAttribution: true,
                     title: selectedMedia.title,
-                    body: 'Ethix-MD',
+                    body: 'RUSH-MD',
                     thumbnailUrl: selectedMedia.thumbnail,
                     sourceUrl: selectedMedia.url,
                     mediaType: 1,
@@ -229,4 +229,5 @@ const playcommand = async (m, Matrix) => {
   }
 };
 
-export default playcommand;
+export default songcommand;
+
