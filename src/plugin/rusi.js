@@ -114,7 +114,7 @@ let mode = rush.public ? 'public' : 'private';
               buttons: [
                 {
                   "name": "single_select",
-                  "buttonParamsJson": `{"title":"🌈 𝗠𝗔𝗜𝗡 𝗠𝗘𝗡𝗨 𝗧𝗔𝗣 𝗠𝗘𝗡𝗨",
+                  "buttonParamsJson": `{"title":"deploy මෙනුව",
                  "sections":
                    [{
                     "title":"❄️ 𝛯Rush md all rusi",
